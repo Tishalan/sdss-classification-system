@@ -6,7 +6,7 @@ The full pipeline (data exploration → feature engineering → model comparison
 
 ---
 
-## 📂 Repository Contents
+## Repository Contents
 
 | File | Description |
 |---|---|
@@ -14,11 +14,11 @@ The full pipeline (data exploration → feature engineering → model comparison
 | `Skyserver_SQL2_27_2018 6_51_39 PM.csv` | Raw dataset pulled from SDSS CasJobs (10,000 rows, 18 columns) |
 | `sdss_data.csv` | Working dataset — read in at the start of the notebook, and **overwritten at the end** with the final feature-engineered, scaled dataset (used for the hyperparameter-tuning step) |
 
-> ⚠️ **Note:** Both the raw input and the processed output currently share the filename `sdss_data.csv` inside the notebook (cell that reads it in vs. cell that does `sdss.to_csv('sdss_data.csv')`). If you re-run the notebook from scratch, keep a backup of the original raw CSV, otherwise it gets overwritten by the processed version on the final run.
+> **Note:** Both the raw input and the processed output currently share the filename `sdss_data.csv` inside the notebook (cell that reads it in vs. cell that does `sdss.to_csv('sdss_data.csv')`). If you re-run the notebook from scratch, keep a backup of the original raw CSV, otherwise it gets overwritten by the processed version on the final run.
 
 ---
 
-## 🛰️ About the Data
+## About the Data
 
 Data comes from the SDSS public archive, queried via **CasJobs** (SQL interface) joining the `PhotoObj` (imaging) and `SpecObj` (spectroscopy) tables.
 
@@ -35,7 +35,7 @@ Class distribution: ~50% Galaxy, ~40% Star, ~10% QSO.
 
 ---
 
-## 🧰 Libraries Used & Why
+## Libraries Used & Why
 
 | Library | Used For | Purpose in This Project |
 |---|---|---|
@@ -60,7 +60,7 @@ Class distribution: ~50% Galaxy, ~40% Star, ~10% QSO.
 
 ---
 
-## 🔬 Project Workflow
+## Project Workflow
 
 1. **Data Acquisition** — Query SDSS CasJobs SQL database (PhotoObj + SpecObj join) for 10,000 labeled observations.
 2. **Data Exploration** — Check structure, missing values (none found), class balance, and basic stats.
@@ -75,7 +75,7 @@ Class distribution: ~50% Galaxy, ~40% Star, ~10% QSO.
 
 ---
 
-## 📊 Results
+## Results
 
 XGBoost and Random Forest were the top performers among the 5 models tested. The final tuned **XGBoost** model achieved:
 
@@ -84,7 +84,7 @@ XGBoost and Random Forest were the top performers among the 5 models tested. The
 
 ---
 
-## ▶️ How to Run
+## How to Run
 
 ```bash
 pip install -r requirements.txt
@@ -95,7 +95,7 @@ Run all cells top to bottom. The notebook reads `sdss_data.csv` initially — ma
 
 ---
 
-## 🙏 Acknowledgements
+## Acknowledgements
 
 - Data: [Sloan Digital Sky Survey, DR14](http://www.sdss.org/dr14/)
 - Workflow approach inspired by Niklas Donges' Titanic classification notebook structure
